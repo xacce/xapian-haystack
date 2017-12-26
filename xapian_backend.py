@@ -30,6 +30,10 @@ except ImportError:
                             "Please refer to the documentation.")
 
 
+if sys.version_info.major == 2:  # compat py2.x
+    FileExistsError = OSError
+
+
 class NotSupportedError(Exception):
     """
     When the installed version of Xapian doesn't support something and we have
